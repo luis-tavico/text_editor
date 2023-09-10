@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Editor</title>
+</head>
+<body>
+    <style>
+        body {
+            /*color: black;
+            background-color: white;*/
+            color: white;
+            background-color: #343a40;
+        }
+        
+        .containerCode {
+            height: 490px; 
+            overflow: auto;
+            /*border: 1px solid #343a40;
+            border-left: none;*/
+            border: 1px solid #6c757d;
+            border-left: none;
+        }
+        
+        .containerCode::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .containerCode::-webkit-scrollbar-track {
+            background-color: transparent; 
+        }
+        
+        .containerCode::-webkit-scrollbar-thumb {
+            border-radius: 25px;
+            background-color: #99A3A4;
+        }
+
+        .lineNumber {
+            /*border-right: 1px solid #343a40;*/
+            border-right: 1px solid #6c757d;
+        }
+        
+        textarea {
+            width: 100%;
+            resize: none;
+            border: none;
+            overflow: hidden;
+            font-family: monospace;
+            /*background-color: white;
+            color: black;*/
+            background-color: #343a40;
+            color:white;
+
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+        
+        #title {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        #btnTheme:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        #btnTheme:hover {
+            background-color: transparent;
+        }
+
+        #iconTheme {
+            color: #fff;
+        }
+    </style>
+    
+    <div class="container py-4 col-12">
+        <div class="row">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-5" id="title">
+                        Input
+                    </div>
+                    <div class="col-2"><button type="button" class="btn btn-outline-secondary" id="btnTheme" onclick="changeTheme()"><i class="fa-solid fa-circle-half-stroke fa-xl" id="iconTheme"></i></button></div>
+                    <div class="col-2"><button type="button" class="btn btn-secondary">Save</button></div>
+                    <div class="col-2"><button type="button" class="btn btn-primary" id="btnRun">Run</button></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-11" id="title">
+                        Output
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container col-12">
+        <div class="row">
+            <div class="col-6 containerCode" id="containerInputCode">
+                <div class="row">
+                    <div class="col-1 text-right pt-1 pb-4 lineNumber" id="lineNumberInput">
+                    </div>
+                    <div class="col-11 p-0">
+                        <textarea class="pl-3 pb-4" id="inputCode" rows="19" spellcheck="false"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 containerCode" id="containerOutputCode">
+                <div class="row">
+                    <div class="col-1 text-right pt-1 pb-4 lineNumber" id="lineNumberOutput">
+                        1
+                    </div>
+                    <div class="col-11 p-0">
+                        <textarea class="pl-3 pb-4" id="outputCode" rows="19" spellcheck="false"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
